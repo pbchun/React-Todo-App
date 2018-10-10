@@ -8,6 +8,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input[type="checkbox"] {
+  display: inline;
+  width: auto;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -40,6 +40,23 @@ class App extends Component {
     })
   }
 
+  toggleTodoDone(event, index) {
+    const todos = [...this.state.todos]; // copy the array
+    todos[index] = {...todos[index]}; // copy the todo
+    todos[index].done = event.target.checked; // update done property on the copied todo
+    this.setState({
+      todos
+    })
+  }
+
+  removeTodo(index) {
+    const todos = [...this.state.todos]; // copy the array
+    todos.splice(index, 1);
+    this.setState({
+      todos
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -50,8 +67,15 @@ class App extends Component {
           <button type="submit">Add Task</button>
         </form>
         <ul>
-          {this.state.todos.map(todo => {
-            return <li key={todo.title}>{todo.title}</li>
+          {this.state.todos.map((todo, index) => {
+            return (<li key={todo.title}>
+            <input onChange={(event) => this.toggleTodoDone(event, index)} type="checkbox" />
+            {/* <span style={{
+              textDecoration: todo.done ? 'line-through' : 'inherit'
+            }}>{todo.title}</span> */}
+            <span className={todo.done ? 'done' : ''}>{todo.title}</span>
+            <button onClick={() => this.removeTodo(index)}>Remove</button>
+            </li>)
           })}
         </ul>
       </div>
