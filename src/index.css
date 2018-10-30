@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #EBF5FB;
 }
 
 input[type="checkbox"] {
@@ -17,7 +18,11 @@ input[type="checkbox"] {
   text-decoration: line-through;
 }
 
-/* code {
+/* .remove-btn {
+  width: 20%;
+} */
+
+code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-} */
+}

@@ -8,10 +8,13 @@ class App extends Component {
       message: 'Hi Peter!',
       newTodo: '',
       todos: [{
-        title: 'Learn React',
+        title: 'Plan Trip',
         done: false
       }, {
-        title: 'Learn JSX',
+        title: 'Book Hotel',
+        done: false
+      }, {
+        title: 'Book Flights',
         done: false
       }]
     };
@@ -74,7 +77,7 @@ class App extends Component {
               textDecoration: todo.done ? 'line-through' : 'inherit'
             }}>{todo.title}</span> */}
             <span className={todo.done ? 'done' : ''}>{todo.title}</span>
-            <button onClick={() => this.removeTodo(index)}>Remove</button>
+            <button className="remove-btn" onClick={() => this.removeTodo(index)}>Remove</button>
             </li>)
           })}
         </ul>
