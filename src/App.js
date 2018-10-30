@@ -5,7 +5,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      message: 'Hello Coding Garden!',
+      message: 'Hi Peter!',
       newTodo: '',
       todos: [{
         title: 'Learn React',
